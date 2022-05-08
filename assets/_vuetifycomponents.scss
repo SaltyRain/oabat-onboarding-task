@@ -2,6 +2,14 @@
 @import '@/assets/_shadows';
 
 .v-card {
+  max-height: 412px !important;
+  max-width: 370px !important;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 35px !important;
+  box-sizing: border-box;
+
   .card-logo--absolute {
     top: -60px;
     left: 20px;
@@ -158,7 +166,7 @@
         border-top-right-radius: 30px;
         border-bottom-right-radius: 30px;
 
-        + div {
+        +div {
           background-image: $gradientSlider !important;
           border-top-left-radius: 30px;
           border-bottom-left-radius: 30px;
@@ -209,9 +217,7 @@
   margin-left: 4.33333% !important;
 }
 
-.theme--light.v-text-field:not(.v-input--has-state)
-  > .v-input__control
-  > .v-input__slot:hover:before {
+.theme--light.v-text-field:not(.v-input--has-state)>.v-input__control>.v-input__slot:hover:before {
   border-color: rgba(0, 0, 0, 0.42) !important;
   border-image: linear-gradient(to left, #2baee8, #d679c7);
   border-image-slice: 1;
