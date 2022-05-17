@@ -1,4 +1,6 @@
 export const state = () => ({
+  type: 'Arbeitgeber',
+  city: 'Passau',
   businesses: [
     {
       id: 1,

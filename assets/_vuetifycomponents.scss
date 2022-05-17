@@ -9,12 +9,31 @@
   overflow: hidden;
   border-radius: 35px !important;
   box-sizing: border-box;
+  .v-chip {
+    position: absolute;
+    z-index: 1;
+    right: 5px;
+    top: 10px;
+    background: $colorPrimaryBlack !important;
+
+  }
+  .card-chip-city {
+
+  }
 
   .card-logo--absolute {
-    top: -60px;
-    left: 20px;
     position: absolute;
+    z-index: 1;
+    top: 40px;
+    left: -10px;
+    border-radius: 10px !important;
+    width: 80px;
   }
+  .card-background-image {
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+  }
+
 
   &.contentOverflow {
     overflow: visible;

@@ -1,9 +1,10 @@
 <template>
-  <div class="d-flex">
+  <div class="d-flex justify-space-between">
     <BusinessCard
       v-for="business of businesses"
       :key="business.id"
       :business="business"
+      :city="city"
       class="mr-2"
     />
   </div>
@@ -18,6 +19,10 @@ export default {
   props: {
     businesses: {
       type: Array,
+      required: true,
+    },
+    city: {
+      type: String,
       required: true,
     },
   },

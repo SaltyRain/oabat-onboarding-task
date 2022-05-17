@@ -7,9 +7,9 @@
 
     <div class="mx-2 mx-md-4 mt-4">
       <h2 class="headline-lg mb-3">
-        Einzigartige <strong>Arbeitgeber</strong> aus <strong>Passau</strong>
+        Einzigartige <strong>{{ type }}</strong> aus <strong>{{ city }}</strong>
       </h2>
-      <BusinessList :businesses="businesses" />
+      <BusinessList :businesses="businesses" :city="city" />
     </div>
   </div>
 </template>
@@ -24,16 +24,13 @@ export default {
     businesses() {
       return this.$store.state.default.businesses
     },
+    city() {
+      return this.$store.state.default.city
+    },
+    type() {
+      return this.$store.state.default.type
+    },
   },
-  // data() {
-  //   return {
-  //     businesses: [
-  //       { id: 1, logo: '', title: 'sosi hui' },
-  //       { id: 2, logo: '', title: 'slava urkaini' },
-  //       { id: 3, logo: '', title: 'ZA DONBASS NAHUI' },
-  //     ],
-  //   }
-  // },
 }
 </script>
 
