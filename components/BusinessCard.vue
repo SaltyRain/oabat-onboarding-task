@@ -1,6 +1,6 @@
 <template>
   <v-card class="contentOverflow">
-    <BusinessLogo :logo="business.logo" />
+    <business-like :is_liked="business.is_liked" :id="business.id" />
 
     <v-chip :dark="true" class="text-details">{{ city }}</v-chip>
     <v-img
@@ -11,11 +11,11 @@
       max-height="200px"
       class="full-width full-height card-background-image"
     />
-
+    <business-logo :logo="business.logo" />
     <div class="card-content px-2 py-2">
       <div class="card-info">
         <p class="headline-xs font-weight-bold">{{ business.title }}</p>
-        <BusinessTags :tags="business.tags" />
+        <business-tags :tags="business.tags" />
         <p class="text-body">{{ shortenDescription(business.description) }}</p>
       </div>
     </div>
@@ -25,10 +25,12 @@
 <script>
 import BusinessLogo from '@/components/BusinessLogo'
 import BusinessTags from '@/components/BusinessTags'
+import BusinessLike from './BusinessLike.vue'
 export default {
   components: {
     BusinessLogo,
     BusinessTags,
+    BusinessLike,
   },
   props: {
     business: {

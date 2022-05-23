@@ -44,4 +44,12 @@ export const getters = {}
 
 export const actions = {}
 
-export const mutations = {}
+export const mutations = {
+  handleLikeClick(state, id) {
+    state.businesses.forEach((business) => {
+      if (business.id === id) {
+        business.is_liked = !business.is_liked
+      }
+    })
+  },
+}
