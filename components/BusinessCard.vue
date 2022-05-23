@@ -1,38 +1,50 @@
 <template>
   <v-card class="contentOverflow">
-    <!-- <div class="card-content"> -->
+    <business-logo :logo="business.logo" />
+
+    <v-chip :dark="true" class="text-details card-chip-city">{{ city }}</v-chip>
     <v-img
+      :src="business.preview_image"
       :lazy-src="business.preview_image"
       height="100%"
       width="100%"
       max-height="200px"
-      :src="business.preview_image"
-      class="full-width full-height"
+      class="full-width full-height card-background-image"
     />
-    <!-- <v-card class="contentOverflow"> -->
-    <div class="card-content px-2 py-2">
-      <p class="font-weight-bold">{{ business.title }}</p>
-      <p>{{ business.description }}</p>
-    </div>
-    <!-- </v-card> -->
 
-    <!-- <v-card class="mt-n4">
-        {{ business.title }}
-      </v-card> -->
-    <!-- </div> -->
-    <!-- <div class="card-content">
-      <img :src="business.preview_image" :alt="business.title" />
-      {{ business.title }}
-    </div> -->
+    <div class="card-content px-2 py-2">
+      <div class="card-info">
+        <p class="headline-xs font-weight-bold">{{ business.title }}</p>
+        <business-tags :tags="business.tags" />
+        <p class="text-body">
+          {{ shortenDescription(business.description) }}
+        </p>
+      </div>
+    </div>
   </v-card>
 </template>
 
 <script>
+import BusinessLogo from './BusinessLogo.vue'
+import BusinessTags from './BusinessTags.vue'
 export default {
+  components: {
+    BusinessLogo,
+    BusinessTags,
+  },
   props: {
     business: {
       type: Object,
       required: true,
+    },
+    city: {
+      type: String,
+      retuired: true,
+    },
+  },
+  methods: {
+    shortenDescription(description) {
+      return description.substring(0, 150) + '...'
     },
   },
 }

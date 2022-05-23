@@ -2,7 +2,7 @@
 @import '@/assets/_shadows';
 
 .v-card {
-  max-height: 412px !important;
+  max-height: 480px !important;
   max-width: 370px !important;
   position: relative;
   display: block;
@@ -10,18 +10,52 @@
   border-radius: 35px !important;
   box-sizing: border-box;
 
-  .card-logo--absolute {
-    top: -60px;
-    left: 20px;
+  // .v-chip {
+  //   position: absolute;
+  //   z-index: 1;
+  //   right: 5px;
+  //   top: 10px;
+  //   background: $colorPrimaryBlack  !important;
+
+  // }
+
+
+  .card-chip-city {
     position: absolute;
+    z-index: 1;
+    right: 5px;
+    top: 10px;
+    background: $colorPrimaryBlack  !important;
   }
+
+  .card-chip-tag {
+    background: $colorPrimaryWhite  !important;
+    border: 1px solid black;
+    @include box-shadow-1;
+  }
+
+  .card-logo--absolute {
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    left: -10px;
+    border-radius: 10px !important;
+    width: 80px;
+  }
+
+  .card-background-image {
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+  }
+
 
   &.contentOverflow {
     overflow: visible;
 
     .card-content {
-      top: -40px;
+      top: -50px;
       position: relative;
+      min-height: 250px;
       background-color: white;
       border-top-left-radius: 30px !important;
       border-top-right-radius: 30px !important;
@@ -139,11 +173,11 @@
   border-radius: 30px !important;
 
   .v-progress-linear__background.primary {
-    background-color: $colorPrimaryWhite !important;
+    background-color: $colorPrimaryWhite  !important;
   }
 
   .v-progress-linear__determinate.primary {
-    background-image: $gradientSlider !important;
+    background-image: $gradientSlider  !important;
     border-bottom-left-radius: 30px;
     border-top-left-radius: 30px;
   }
@@ -167,7 +201,7 @@
         border-bottom-right-radius: 30px;
 
         +div {
-          background-image: $gradientSlider !important;
+          background-image: $gradientSlider  !important;
           border-top-left-radius: 30px;
           border-bottom-left-radius: 30px;
           //border: none;
@@ -273,7 +307,11 @@
   }
 
   .primary--text {
-    color: $blueAccent1 !important;
-    caret-color: $blueAccent1 !important;
+    color: $blueAccent1  !important;
+    caret-color: $blueAccent1  !important;
   }
+}
+
+.swiper-wrapper {
+  padding-bottom: 20px;
 }
