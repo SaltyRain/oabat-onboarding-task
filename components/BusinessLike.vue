@@ -30,11 +30,6 @@ export default {
       mdiCardsHeart,
     },
   }),
-  // methods: {
-  //   handleClick(e) => {
-
-  //   }
-  // }
 }
 </script>
 
