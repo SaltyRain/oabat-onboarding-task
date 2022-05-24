@@ -2,7 +2,7 @@
   <v-card class="contentOverflow">
     <business-like :is_liked="business.is_liked" :id="business.id" />
 
-    <v-chip :dark="true" class="text-details">{{ city }}</v-chip>
+    <v-chip :dark="true" class="text-details card-chip-city">{{ city }}</v-chip>
     <v-img
       :src="business.preview_image"
       :lazy-src="business.preview_image"
@@ -16,7 +16,9 @@
       <div class="card-info">
         <p class="headline-xs font-weight-bold">{{ business.title }}</p>
         <business-tags :tags="business.tags" />
-        <p class="text-body">{{ shortenDescription(business.description) }}</p>
+        <p class="text-body">
+          {{ shortenDescription(business.description) }}
+        </p>
       </div>
     </div>
   </v-card>
@@ -40,11 +42,12 @@ export default {
     city: {
       type: String,
       retuired: true,
+      default: 'Passau',
     },
   },
   methods: {
     shortenDescription(description) {
-      return description.substring(0, 200) + '...'
+      return description.substring(0, 150) + '...'
     },
   },
 }

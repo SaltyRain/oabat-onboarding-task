@@ -1,15 +1,15 @@
 <template>
   <div>
-    <v-card class="pa-2 mx-2 mx-md-4 mt-4 welcome-card text-center">
+    <!-- <v-card class="pa-2 mx-2 mx-md-4 mt-4 welcome-card text-center">
       <div class="headline-md">Implement your task here</div>
       <div class="text-body">Contact @Julian if help is needed.</div>
-    </v-card>
+    </v-card> -->
 
     <div class="mx-2 mx-md-4 mt-4">
       <h2 class="headline-lg mb-3">
         Einzigartige <strong>{{ type }}</strong> aus <strong>{{ city }}</strong>
       </h2>
-      <BusinessList :businesses="businesses" :city="city" />
+      <business-list :businesses="businesses" :city="city" />
     </div>
   </div>
 </template>
